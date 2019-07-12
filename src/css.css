@@ -1,7 +1,11 @@
 @font-face{
   font-family:'Futura CHS';
-  src:url('https://china-mini-app.s3.cn-northwest-1.amazonaws.com.cn/DysonCHS-Book-Min.ttf');
+  src:url('https://chenaultchou.github.io/first-service/src/CustFont-Book.ttf');
 }
 body{
   font-family: "Futura CHS", sans-serif;
 }
+
+
+/*
+https://china-mini-app.s3.cn-northwest-1.amazonaws.com.cn/DysonCHS-Book-Min.ttf*/
