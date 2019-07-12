@@ -1,0 +1,7 @@
+@font-face{
+  font-family:'Futura CHS';
+  src:url('https://china-mini-app.s3.cn-northwest-1.amazonaws.com.cn/DysonCHS-Book-Min.ttf');
+}
+body{
+  font-family: "Futura CHS", sans-serif;
+}

@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>main</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+<div>'正在删除您的机器人'我们在重置机器人时遇到了连接问题。请检查您的机器人，确认重置是否成功。如果机器人的无线网络指示灯常亮，说明其仍可能处于连接状态。','要确保机器已重置、信息已删除，请按以下步骤操作。', 从戴森官网下载WIPE软件并保存到U盘中，不要重新为文件命名。U盘剩余空间至少应为256MB，不得存储有其他文件或文件夹。U盘不得加密，必须为FAT32或MS-DOS(FAT)格式。", 在某些网页浏览器中，该文件可能仅会显示，不会提示您下载。在这种情况下，请选择"文件"，然后选择"另存为"（或您的网络浏览器中的相应选项），即可将文件保存到U盘中。', 取下机器人的后置滤网，然后将U盘插入机器后部的USB接口。", 将机器人放置在充电底座上面，保证它在充电。接下来，长按电源键。机器人的指示灯会有如下的表现：蓝色光圈亮起，蓝色光圈消失，蓝色光随机亮起。当你看到蓝光随机亮起之后请松开电源键。", 流程完成后，机器人将自动关机。取下U盘，重新安装滤网和滤网罩。", 将机器人放到充电底座上充电。接下来，按下并按住电源按钮，直至粉色光圈闪烁，表示流程已经开始。1234567890!@#$%^</div>
+<div>connecting: '正在连接...', disconnected: '离线', offSensor: '关闭', initSensor: '正在启动传感器...',good: '优', fair: '良', poor: '轻度污染', veryPoor: '中度污染', extremelyPoor: '重度污染', severe: '严重污染',cancel: '取消', confirm: '确认', tip: '提示', continues: '继续', submit: '提交',wrongPasswordTitle: '连接失败', wrongPasswordDes: '您的无线网络或密码好像不正确。需要重试吗？', troubleConnectingTitle: "我们遇到连接问题", troubleConnectingDes: "再试一次吧。我们先来搜索您的设备。", troubleConnectingCodeTitle: "我们在连接时遇到问题", troubleConnectingCodeDes: "请将您的设备移至机器显示屏旁边。", connectionLostTitle: '连接已断开', connectionLostDes: '请靠近您的设备，确保设备已通电并开机。', connectionFailTitle: '连接失败', connectionFailDes: "我们在连接至您的设备时遇到问题。需要重试吗？", slowResponseTitle: '响应速度慢', slowResponseDes: '此过程运行时间超过预期。您是否希望继续？',</div>
+<div>takeOwnership: '获得所有权', takeOwnershipDes: '原所有人会收到通知，他们将无法再通过应用程序使用此设备。', takeOwnershipButtonTitle: '继续',</div>
+<div>useAnswer: "不是，我只是使用者", robotOwnershipQuestion: "您是此吸尘机器人的新所有人吗？", robotOwnershipAnswer: '是的，我拥有此吸尘机器人', ecOwnershipQuestion: "您是此设备的新主人吗？", ecOwnershipAnswer: "是的，我拥有此设备",  robotName: '吸尘机器人名称', robotNameTitle: '给您的吸尘机器人命名', robotNameDes1: "您可以自定义吸尘机器人的名称。", robotNameDes2: "吸尘机器人名称可以在设置中更改。", ecName: '房间名称', ecNameTitle: '您的机器放在哪里？', ecNameDes1: "为您的设备进行个性化设置，并使用语音控制服务。", ecNameDes2: "设备的房间名称可以在设置中更改。",  keepOwnership: '忽略所有权？', keepOwnershipDes: '此设备的所有者将可以继续访问、控制此设备，并查看其数据。', keepOwnershipButtonTitle: '好的，知道了', selectMachineTitle: '选择您的戴森设备', selectMachineDes: '请选择您的设备类别。', airTreatment: '空气净化风扇', robotVacuum: '吸尘机器人', lighting: '灯具',</div>
+<div>'请在Dyson Link应用程序上设置连接。', useAppDes1: "您只需在应用商店下载并按照说明完成设备的连接，再返回小程序就可以来控制您的设备了。", useAppDes2: "只需从应用商店下载该应用程序，然后按照说明操作。",  enableEcTitle: '连接可能会中断', enableEcDes: '按住机器的电源按钮5秒。开启后，机器应显示白色常亮无线网络指示灯。', enableEcButtonTitle: "好的，已开启",  wifiSelectTitle: '您的设备可以找到以下网络：', cantSeeWifi: "重试", noApTitle: "为什么看不到我的无线网络？", noApDes: "请确保您的设备在无线网络覆盖范围内且网络可以正常使用。",</div>
+<div>enableRobotTitle: '您的吸尘机器人已准备好连接了吗？', enableRobotDes: "请等待大约 30 秒，直至吸尘机器人的无线网络指示灯停止闪烁，即表示吸尘机器人已准备好进行连接。", enableRobotButtonTitle: "好的，准备好了",</div>
+<div>  contactUsTitle: "我们随时为您提供帮助", contactUsDes: "请联系我们，获取设备连接方面的建议。", contactUsDownButton: "联系我们",</div>
+<div> '添加设备',
+    retry: '重试',
+    confirm: '确认',
+    yes: '是',
+    no: '否',
+    ok: '好的',
+    retry: '重试',
+    help: '帮助',
+    continue: '继续',
+    cancel: '取消',
+    password: '密码',
+    submit: '提交',
+    select: '选择',
+
+    /// Scan-device-list
+    // Scanning view.
+    scaningDevice: '正在寻找戴森设备…',
+    scanningDes: '您应打开设备或为其充电。',
+    openBLETip: '请打开蓝牙',
+
+    // Machines view.
+    foundTheseMachine: "我们找到了以下戴森设备",
+    notSeeMachine: "没有看到我的设备",
+    incompatibleDes: '与Dyson Link小程序不兼容',
+
+    // No machine found.
+    notFindMachineTitle: '无法找到您的戴森设备',
+    notFindMachineDes: "请确保您已靠近设备，并已打开设备或为其充电。",
+
+    // Incompatible machine.
+    incompatibleMachine: '不兼容的设备',
+    incompatibleMachineDes1: "由于这台设备不是在中国购买，很遗憾您将无法在微信小程序上使用该设备。",
+    incompatibleMachineDes2: "请使用Dyson Link 应用程序连接和控制该设备。",
+
+    // Location and bluetooth requirements.
+    locationServiceTitle: '请打开定位服务',
+    locationServiceDes: "为了能够连接至您的戴森设备，需要在手机设置中打开微信的定位服务。",
+    bluetoothServiceTitle: '请打开蓝牙Bluetooth®',
+    bluetoothServiceDes: 'Dyson Link 小程序使用蓝牙来连接至您的戴森设备',
+
+    /// Authentication-and-connect
+    // Hold device view.
+    ecHoldTitle: "请将您的设备移至机器显示屏旁边",
+    ecHoldDes: "这样机器便可以检测到您的设备。",
+    robotHoldTitle: "将您的移动设备靠近吸尘机器人按钮",
+    robotHoldDes: "吸尘机器人便可以检测到移动设备。",
+
+    // Press button view.
+    pressEcButton: '现在，请按下机器的电源按钮',
+    pressRobotButton: '现在按下按钮',
+    pressButtonDes: '匹配流程将开启。',
+    noPressButtonTitle: "我们没有检测到点按按钮的动作",
+    noPressButtonRobotDes: "我们会再次搜索您的设备，请您在看到提示时及时按下电源按钮。",
+    noPressButtonECDes: "我们会再次搜索您的设备，请您在看到提示时及时按下电源按钮。",
+
+    // Pairing view.
+    pairingEC: '正在匹配机器…',
+    pairingECDes: '请稍候，我们正在验证与机器的连接。',
+    pairingRobot: '正在匹配吸尘机器人…',
+    pairingRobotDes: '请稍等片刻，我们正在验证与吸尘机器人的连接。',
+
+    // Paired view.
+    pairedEC: '机器已匹配',
+    pairedECDes: "现在，我们来完成机器的连接设置。",
+    pairedRobot: '吸尘机器人已匹配',
+    pairedRobotDes: "现在来完成吸尘机器人的连接设置。",
+
+    // Input password view.
+    inputPsdDes: '请输入以下网络的密码：',
+    wrongPassword: '请检查您输入的密码是否正确。',
+    noPassword: "我的无线网络没有密码。",
+
+    // Final connection view.
+    connectWaiting: '您只需稍等片刻。',
+    ecConnecting: '设备正在连接…',
+    robotConnecting: '正在连接吸尘机器人...',
+
+    // Connected view.
+    completeSetup: '完成设置',
+    ecConnected: '设备已连接',
+    robotConnected: '吸尘机器人已连接',
+    ecConnectedDes: '设备已可以使用。',
+    robotConnectedDes: '吸尘机器人已可以使用。',</div>
+<div>
+    // airwaysFault
+    airwaysFault_shortDescription: '通气道故障',
+    airwaysFault_longDescription: '机器内部的气道可能被堵住了。',
+    // airwaysFault_resolutionDescription: 'There may may be a blockage in the robot\'s internal airways.',
+    airwaysFault_resolutionDescription: '机器人内部的通气道可能有异物堵住',
+    airwaysFault_resolutionStep0: '',
+    airwaysFault_resolutionStep1: '观看视频或滑动阅览图文说明。',
+    airwaysFault_resolutionStep2: '请检查透明集尘筒是否正确安装。如果集尘筒已满，请清空。',
+    airwaysFault_resolutionStep3: '按下气旋的拆卸按钮，卸下气旋组件。',
+    airwaysFault_resolutionStep4: '请检查气旋组件和进气道是否堵塞。',
+    airwaysFault_resolutionStep5: '按下滤网的拆卸按钮，打开滤网的网罩。',
+    airwaysFault_resolutionStep6: '请检查前后滤网是否堵塞。',
+    airwaysFault_resolutionStep7: '请用冷水清洗滤网。请勿使用热水或清洁剂。甩动滤网，甩去残渣和多余的水。重复清洗 / 甩干的动作，直到流经滤网的水变干净为止。',
+    airwaysFault_resolutionStep8: '让滤网自然晾干（至少 24 小时）。要重新装上滤网，请以和之前相反的顺序操作。',
+    airwaysFault_resolutionStep9: '请用冷水清洗滤网。请勿使用热水或清洁剂。甩动滤网，甩去残渣和多余的水。重复清洗 / 甩干的动作，直到流经滤网的水变干净为止。',
+    airwaysFault_resolutionStep10: '让滤网自然晾干（至少 24 小时）。装回滤网：把滤网底部的卡条对准吸尘机器人的卡槽，轻推滤网顶部，使滤网归位。向下滑动滤网网罩。',
+    airwaysFault_resolutionStep11: '问题解决后，请把吸尘机器人放回原来位置，按下电源按钮继续清扫。',
+    // binRemoved
+    binRemoved_shortDescription: '集尘桶被取下',
+    binRemoved_longDescription: '您的吸尘机器人的集尘桶可能安装不正确。',
+    binRemoved_resolutionDescription: '替换集尘桶',
+    binRemoved_resolutionStep0: '请检查透明集尘筒是否正确安装。如果集尘筒已满，请清空。',
+    binRemoved_resolutionStep1: '问题解决后，请把吸尘机器人放回原来位置，按下电源按钮继续清扫。',
+    // airwaysBlocked
+    airwaysBlocked_shortDescription: '通气道堵塞',
+    airwaysBlocked_longDescription: '吸尘机器人内部通气道可能被堵塞。',
+    airwaysBlocked_resolutionDescription: '清理堵塞',
+    airwaysBlocked_resolutionStep0: '按下气旋的拆卸按钮，卸下气旋组件。',
+    airwaysBlocked_resolutionStep1: '请检查气旋组件和进气道是否堵塞。',
+    airwaysBlocked_resolutionStep2: '按下滤网的拆卸按钮，打开滤网的网罩。',
+    airwaysBlocked_resolutionStep3: '请检查前后滤网是否堵塞。',
+    airwaysBlocked_resolutionStep4: '请用冷水清洗滤网。请勿使用热水或清洁剂。甩动滤网，甩去残渣和多余的水。重复清洗 / 甩干的动作，直到流经滤网的水变干净为止。',
+    airwaysBlocked_resolutionStep5: '让滤网自然晾干（至少 24 小时）。要重新装上滤网，请以和之前相反的顺序操作。',
+    airwaysBlocked_resolutionStep6: '请用冷水清洗滤网。请勿使用热水或清洁剂。甩动滤网，甩去残渣和多余的水。重复清洗 / 甩干的动作，直到流经滤网的水变干净为止。',
+    airwaysBlocked_resolutionStep7: '让滤网自然晾干（至少 24 小时）。装回滤网：把滤网底部的卡条对准吸尘机器人的卡槽，轻推滤网顶部，使滤网归位。向下滑动滤网网罩。',
+    airwaysBlocked_resolutionStep8: '问题解决后，请把吸尘机器人放回原来位置，按下电源按钮继续清扫。',
+    // brushBarFault
+    brushBarFault_shortDescription: '刷条故障',
+    brushBarFault_longDescription: '残留在刷条或履带上的垃圾可能会影响机器的正常运作。',
+    brushBarFault_resolutionDescription: '清理堵塞',
+    brushBarFault_resolutionStep0: '',
+    brushBarFault_resolutionStep1: '观看视频或滑动阅览图文说明。',
+    brushBarFault_resolutionStep2: '用一枚硬币，朝逆时针方向拧动刷条扣件。',
+    brushBarFault_resolutionStep3: '取下刷条，手动清理其中的残留垃圾。装上刷条。用一枚硬币，朝顺时针方向拧动扣件，使刷条固定。',
+    brushBarFault_resolutionStep4: '把吸尘机器人放在柔软的表面上。这是为了防止摄像头和传感器损坏。检查履带，手动清理履带上残留的毛发和垃圾。',
+    brushBarFault_resolutionStep5: '如果吸尘机器人被卡住，请拿起机器人，放到附近某个位置，它会继续清扫。',
+    brushBarFault_resolutionStep6: '问题解决后，请把吸尘机器人放回原来位置，按下电源按钮继续清扫。',
+    // brushBarStuck
+    brushBarStuck_shortDescription: '刷条卡住',
+    brushBarStuck_longDescription: '刷条可能被尘垢卡住，从而无法正常工作。',
+    brushBarStuck_resolutionDescription: '清理堵塞',
+    brushBarStuck_resolutionStep0: '用一枚硬币，朝逆时针方向拧动刷条扣件。',
+    brushBarStuck_resolutionStep1: '取下刷条，手动清理其中的残留垃圾。装上刷条。用一枚硬币，朝顺时针方向拧动扣件，使刷条固定。',
+    brushBarStuck_resolutionStep2: '问题解决后，请把吸尘机器人放回原来位置，按下电源按钮继续清扫。',
+    // trackStuck
+    trackStuck_shortDescription: '履带卡住',
+    trackStuck_longDescription: '履带可能被尘垢卡住，从而无法正常工作。',
+    trackStuck_resolutionDescription: '清理堵塞',
+    trackStuck_resolutionStep0: '把吸尘机器人放在柔软的表面上。这是为了防止摄像头和传感器损坏。检查履带，手动清理履带上残留的毛发和垃圾。',
+    trackStuck_resolutionStep1: '问题解决后，请把吸尘机器人放回原来位置，按下电源按钮继续清扫。',
+    // robotStuck
+    robotStuck_shortDescription: '机器人卡住',
+    robotStuck_longDescription: '您的吸尘机器人可能被障碍物卡住',
+    robotStuck_resolutionDescription: '恢复机器人',
+    robotStuck_resolutionStep0: '如果吸尘机器人被卡住，请拿起机器人，放到附近某个位置，它会继续清扫。',
+    robotStuck_resolutionStep1: '问题解决后，请把吸尘机器人放回原来位置，按下电源按钮继续清扫AZ。JKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz',
+    // chargingFault
+    chargingFault_shortDescription: '充电故障',
+    chargingFault_longDescription: '充电底座有遮挡物。',
+    chargingFault_resolutionDescription: '',
+    chargingFault_resolutionStep0: '',
+    chargingFault_resolutionStep1: '请确认底座已通电：底座底部的蓝色电源灯应亮起。',
+    chargingFault_resolutionStep2: '请确认吸尘机器人和充电底座的充电触条均干净清洁、接触良好。',
+    chargingFault_resolutionStep3: '请确认充电基板已正确展开。基板应与墙面平行，朝向房间。',
+    chargingFault_resolutionStep4: '请确认底座未移动，还在吸尘机器人开始清扫时的原始位置，否则可能影响清扫路径。',
+    chargingFault_resolutionStep5: '问题解决后，请把吸尘机器人放回原来位置，按下电源按钮继续清扫。',
+    // opticsFault
+    opticsFault_shortDescription: '光学系统故障',
+    opticsFault_longDescription: '传感器或独有的 360 度视讯系统上可能被灰尘或残留垃圾覆盖住。',
+    opticsFault_resolutionDescription: '',
+    opticsFault_resolutionStep0: '',
+    opticsFault_resolutionStep1: '请检查所有传感器护罩和导航摄像头，确认是否存在灰尘、污迹或指纹。请用柔软干燥的超细纤维布料轻轻擦拭。请勿使用任何清洁剂、消毒水或喷剂。',
+    opticsFault_resolutionStep2: '请确认在吸尘机器人的清扫区域内有充足的照明，包括已经清扫的区域。',
+    opticsFault_resolutionStep3: '问题解决后，请把吸尘机器人放回原来位置，按下电源按钮继续清扫。',
+    // navigationFault
+    navigationFault_shortDescription: '导航故障',
+    navigationFault_longDescription: '充电底座有遮挡物。',
+    navigationFault_resolutionDescription: '',
+    navigationFault_resolutionStep0: '',
+    navigationFault_resolutionStep1: '观看视频或滑动阅览图文说明。',
+    navigationFault_resolutionStep2: '吸尘机器人在清扫过程中无法正常返回底座。请如常开始下一次清扫。',
+    // cleanStopped
+    cleanStopped_shortDescription: '清扫停止',
+    cleanStopped_longDescription: '发生错误。把您的吸尘机器人放到底座上。 ',
+    cleanStopped_resolutionDescription: '把机器人放回底座',
+    // unableToDock
+    unableToDock_shortDescription: '清扫停止',
+    unableToDock_longDescription: '您吸尘机器人无法返回底座。请手动把它放回底座。',
+    unableToDock_resolutionDescription: '把机器人放回底座',
+    // cameraOverexposedError
+    cameraOverexposedError_shortDescription: '无法启动',
+    cameraOverexposedError_longDescription: '摄像头曝光无法稳定。把您的吸尘机器人放回底座并重启。',
+    cameraOverexposedError_resolutionDescription: '把机器人放回底座',
+    // couldNotStart
+    couldNotStart_shortDescription: '无法启动',
+    couldNotStart_longDescription: '您的吸尘机器人无法启动清扫。把它放到底座上重启。',
+    couldNotStart_resolutionDescription: '把机器人放回底座',
+    // lowBattery
+    lowBattery_shortDescription: '电池电量低',
+    lowBattery_longDescription: '您的吸尘机器人电池电量低。把它放到底座上充电。',
+    lowBattery_resolutionDescription: '把机器人放回底座',
+    // batteryFault
+    batteryFault_shortDescription: '电池故障',
+    batteryFault_longDescription: '请拨打戴森专家热线，订购新的电池。',
+    batteryFault_resolutionDescription: '请拨打戴森服务热线',
+    batteryFault_resolutionStep0: '',
+    // contactTheDysonHelpline
+    contactTheDysonHelpline_shortDescription: '请拨打戴森服务热线',
+    contactTheDysonHelpline_longDescription: '请联系戴森专员。机器有可能发生故障，请拨打戴森服务热线寻求进一步帮助。',
+    contactTheDysonHelpline_resolutionDescription: '请拨打戴森服务热线',
+    contactTheDysonHelpline_resolutionStep0: '',
+</div>
+<div>
+    // airwaysFault
+    airwaysFault_shortDescription: '通气道故障',
+    airwaysFault_longDescription: '请清除堵塞物。',
+    airwaysFault_resolutionDescription: '机器人内部的通气道可能有异物堵住。',
+    airwaysFault_resolutionStep0: '',
+    airwaysFault_resolutionStep1: '请检查透明集尘筒是否正确安装。如果集尘筒已满，请清空。',
+    airwaysFault_resolutionStep2: '按下气旋的拆卸按钮，卸下气旋组件。',
+    airwaysFault_resolutionStep3: '请检查气旋组件和进气道是否堵塞。',
+    airwaysFault_resolutionStep4: '按下滤网的拆卸按钮，打开滤网的网罩。',
+    airwaysFault_resolutionStep5: '请检查前后滤网是否堵塞。',
+    airwaysFault_resolutionStep6: '请用冷水清洗滤网。请勿使用热水或清洁剂。甩动滤网，甩去残渣和多余的水。重复清洗 / 甩干的动作，直到流经滤网的水变干净为止。',
+    airwaysFault_resolutionStep7: '让滤网自然晾干（至少 24 小时）。要重新装上滤网，请以和之前相反的顺序操作。',
+    airwaysFault_resolutionStep8: '请用冷水清洗滤网。请勿使用热水或清洁剂。甩动滤网，甩去残渣和多余的水。重复清洗 / 甩干的动作，直到流经滤网的水变干净为止。',
+    airwaysFault_resolutionStep9: '让滤网自然晾干（至少 24 小时）。装回滤网：把滤网底部的卡条对准吸尘机器人的卡槽，轻推滤网顶部，使滤网归位。向下滑动滤网网罩。',
+    airwaysFault_resolutionStep10: '问题解决后，请把吸尘机器人放回原来位置，按下电源按钮继续清扫。',
+    // binNotDetected
+    binNotDetected_shortDescription: '集尘桶被取下',
+    binNotDetected_longDescription: '请检查是否正确安装。',
+    binNotDetected_resolutionDescription: '替换集尘桶',
+    binNotDetected_resolutionStep0: '请检查透明集尘筒是否正确安装。如果集尘筒已满，请清空。',
+    binNotDetected_resolutionStep1: '问题解决后，请把吸尘机器人放回原来位置，按下电源按钮继续清扫。',
+    // airwaysBlocked
+    airwaysBlocked_shortDescription: '通气道堵塞',
+    airwaysBlocked_longDescription: '请清除堵塞物。',
+    airwaysBlocked_resolutionDescription: '清理堵塞',
+    airwaysBlocked_resolutionStep0: '按下气旋的拆卸按钮，卸下气旋组件。',
+    airwaysBlocked_resolutionStep1: '请检查气旋组件和进气道是否堵塞。',
+    airwaysBlocked_resolutionStep2: '按下滤网的拆卸按钮，打开滤网的网罩。',
+    airwaysBlocked_resolutionStep3: '请检查前后滤网是否堵塞。',
+    airwaysBlocked_resolutionStep4: '请用冷水清洗滤网。请勿使用热水或清洁剂。甩动滤网，甩去残渣和多余的水。重复清洗 / 甩干的动作，直到流经滤网的水变干净为止。',
+    airwaysBlocked_resolutionStep5: '让滤网自然晾干（至少 24 小时）。要重新装上滤网，请以和之前相反的顺序操作。',
+    airwaysBlocked_resolutionStep6: '请用冷水清洗滤网。请勿使用热水或清洁剂。甩动滤网，甩去残渣和多余的水。重复清洗 / 甩干的动作，直到流经滤网的水变干净为止。',
+    airwaysBlocked_resolutionStep7: '让滤网自然晾干（至少 24 小时）。装回滤网：把滤网底部的卡条对准吸尘机器人的卡槽，轻推滤网顶部，使滤网归位。向下滑动滤网网罩。',
+    airwaysBlocked_resolutionStep8: '问题解决后，请把吸尘机器人放回原来位置，按下电源按钮继续清扫。',
+    // brushBarFault
+    brushBarFault_shortDescription: '刷条故障',
+    brushBarFault_longDescription: '残留在刷条或履带上的垃圾可能会影响机器的正常运作。',
+    brushBarFault_resolutionDescription: '清理堵塞',
+    brushBarFault_resolutionStep0: '刷条故障',
+    brushBarFault_resolutionStep1: '用一枚硬币，朝逆时针方向拧动刷条扣件。',
+    brushBarFault_resolutionStep2: '取下刷条，手动清理其中的残留垃圾。装上刷条。用一枚硬币，朝顺时针方向拧动扣件，使刷条固定。',
+    brushBarFault_resolutionStep3: '如果吸尘机器人被卡住，请拿起机器人，放到附近某个位置，它会继续清扫。',
+    brushBarFault_resolutionStep4: '问题解决后，请把吸尘机器人放回原来位置，按下电源按钮继续清扫。',
+    brushBarFault_resolutionStep5: '履带故障',
+    brushBarFault_resolutionStep6: '把吸尘机器人放在柔软的表面上。这是为了防止摄像头和传感器损坏。检查履带，手动清理履带上残留的毛发和垃圾。',
+    brushBarFault_resolutionStep7: '如果吸尘机器人被卡住，请拿起机器人，放到附近某个位置，它会继续清扫。',
+    brushBarFault_resolutionStep8: '问题解决后，请把吸尘机器人放回原来位置，按下电源按钮继续清扫。',
+    // brushBarStuck
+    brushBarStuck_shortDescription: '刷条卡住',
+    brushBarStuck_longDescription: '请清除堵塞物。',
+    brushBarStuck_resolutionDescription: '清理堵塞',
+    brushBarStuck_resolutionStep0: '用一枚硬币，朝逆时针方向拧动刷条扣件。',
+    brushBarStuck_resolutionStep1: '取下刷条，手动清理其中的残留垃圾。装上刷条。用一枚硬币，朝顺时针方向拧动扣件，使刷条固定。',
+    brushBarStuck_resolutionStep2: '问题解决后，请把吸尘机器人放回原来位置，按下电源按钮继续清扫。',
+    // trackStuck
+    trackStuck_shortDescription: '履带卡住',
+    trackStuck_longDescription: '请清除堵塞物。',
+    trackStuck_resolutionDescription: '清理堵塞',
+    trackStuck_resolutionStep0: '把吸尘机器人放在柔软的表面上。这是为了防止摄像头和传感器损坏。检查履带，手动清理履带上残留的毛发和垃圾。',
+    trackStuck_resolutionStep1: '问题解决后，请把吸尘机器人放回原来位置，按下电源按钮继续清扫。',
+    // robotStuck
+    robotStuck_shortDescription: '机器人卡住',
+    robotStuck_longDescription: '请使吸尘机器人复原。',
+    robotStuck_resolutionDescription: '恢复机器人',
+    robotStuck_resolutionStep0: '如果吸尘机器人被卡住，请拿起机器人，放到附近某个位置，它会继续清扫。',
+    robotStuck_resolutionStep1: '问题解决后，请把吸尘机器人放回原来位置，按下电源按钮继续清扫。',
+    // chargingFault
+    chargingFault_shortDescription: '充电故障',
+    chargingFault_longDescription: '充电底座有遮挡物。',
+    chargingFault_resolutionDescription: '',
+    chargingFault_resolutionStep0: '',
+    chargingFault_resolutionStep1: '请确认底座已通电：底座底部的蓝色电源灯应亮起。',
+    chargingFault_resolutionStep2: '请确认吸尘机器人和充电底座的充电触条均干净清洁、接触良好。',
+    chargingFault_resolutionStep3: '请确认充电基板已正确展开。基板应与墙面平行，朝向房间。',
+    chargingFault_resolutionStep4: '请确认底座未移动，还在吸尘机器人开始清扫时的原始位置，否则可能影响清扫路径。',
+    chargingFault_resolutionStep5: '问题解决后，请把吸尘机器人放回原来位置，按下电源按钮继续清扫。',
+    // opticsFault
+    opticsFault_shortDescription: '光学系统故障',
+    opticsFault_longDescription: '传感器或独有的 360 度视讯系统上可能被灰尘或残留垃圾覆盖住。',
+    opticsFault_resolutionDescription: '',
+    opticsFault_resolutionStep0: '',
+    opticsFault_resolutionStep1: '请检查所有传感器护罩和导航摄像头，确认是否存在灰尘、污迹或指纹。请用柔软干燥的超细纤维布料轻轻擦拭。请勿使用任何清洁剂、消毒水或喷剂。',
+    opticsFault_resolutionStep2: '请确认在吸尘机器人的清扫区域内有充足的照明，包括已经清扫的区域。',
+    opticsFault_resolutionStep3: '问题解决后，请把吸尘机器人放回原来位置，按下电源按钮继续清扫。',
+    // navigationFault
+    navigationFault_shortDescription: '导航故障',
+    navigationFault_longDescription: '充电底座有遮挡物。',
+    navigationFault_resolutionDescription: '',
+    navigationFault_resolutionStep0: '返回至底座',
+    navigationFault_resolutionStep1: '吸尘机器人在清扫过程中无法正常返回底座。请如常开始下一次清扫。',
+    // cleanStopped
+    cleanStopped_shortDescription: '清扫停止',
+    cleanStopped_longDescription: '发生错误。把您的吸尘机器人放到底座上。',
+    cleanStopped_resolutionDescription: '把机器人放回底座',
+    // unableToDock
+    unableToDock_shortDescription: '清扫停止',
+    unableToDock_longDescription: '您吸尘机器人无法返回底座。请手动把它放回底座。',
+    unableToDock_resolutionDescription: '把机器人放回底座',
+    // cleanCouldNotStart
+    cleanCouldNotStart_shortDescription: '无法启动',
+    cleanCouldNotStart_longDescription: '您的吸尘机器人无法启动清扫。把它放到底座上重启。',
+    cleanCouldNotStart_resolutionDescription: '把机器人放回底座',
+    // cameraExposureError
+    cameraOverexposedError_shortDescription: '无法启动',
+    cameraOverexposedError_longDescription: '你的相机在这里曝光过度。请将您的底座移到较暗的位置。',
+    cameraOverexposedError_resolutionDescription: '把机器人放回底座',
+    // cameraUnderexposedError
+    cameraUnderexposedError_shortDescription: '无法启动',
+    cameraUnderexposedError_longDescription: '请检查房间的光线是否充足，或者尝试移动充电底座的位置。',
+    cameraUnderexposedError_resolutionDescription: '把机器人放回底座',
+    // batteryLow
+    batteryLow_shortDescription: '电池电量低',
+    batteryLow_longDescription: '您的吸尘机器人电池电量低。把它放到底座上充电。',
+    batteryLow_resolutionDescription: '把机器人放回底座',
+    // batteryFault
+    batteryFault_shortDescription: '电池故障',
+    batteryFault_longDescription: '请拨打戴森专家热线，订购新的电池。',
+    batteryFault_resolutionDescription: '请拨打戴森服务热线',
+    batteryFault_resolutionStep0: '您的智能吸尘机器人可 能需要戴森的帮助。',
+    // pleaseGetInTouch
+    pleaseGetInTouch_shortDescription: '请保持联系方式畅通',
+    pleaseGetInTouch_longDescription: '发生故障后，戴森专家将帮您解决问题。',
+    pleaseGetInTouch_resolutionDescription: '请拨打戴森服务热线',
+    pleaseGetInTouch_resolutionStep0: '您的智能吸尘机器人可 能需要戴森的帮助。',
+    // liftFault
+    liftFault_shortDescription: '机器人已悬空',
+    liftFault_longDescription: '请确保您的机器人在地面上，再按下开始按钮。',
+    liftFault_resolutionDescription: '请确保您的机器人已放在地板上，然后按动开始按钮。',
+    liftFault_resolutionStep0: '请检查透明集尘筒是否正确安装。如果集尘筒已满，请清空。',
+    liftFault_resolutionStep1: '请确保您的机器人在地面上。',
+    liftFault_resolutionStep2: '请检查透明集尘筒是否正确安装。如果集尘筒已满，请清空。',
+    // robotLifted
+    robotLifted_shortDescription: '机器人已悬空',
+    robotLifted_longDescription: '请确保您的机器人在地面上，再按下开始按钮。',
+    robotLifted_resolutionDescription: '请确保您的机器人在地面上，再按下开始按钮。',
+    robotLifted_resolutionStep0: '请确保您的机器人在地面上。',
+    robotLifted_resolutionStep1: '请检查透明集尘筒是否正确安装。如果集尘筒已满，请清空。',
+    // dropDetectedNearby
+    dropDetectedNearby_shortDescription: '注意跌落',
+    dropDetectedNearby_longDescription: '请将您的机器人移离可跌落区域，再按下开始按钮。',
+    dropDetectedNearby_resolutionDescription: '请将您的机器人移离可跌落区域，再按下开始按钮。',
+    dropDetectedNearby_resolutionStep0: '请检查透明集尘筒是否正确安装。如果集尘筒已满，请清空。',
+    dropDetectedNearby_resolutionStep1: '请确保您的机器人在地面上。',
+    dropDetectedNearby_resolutionStep2: '请检查透明集尘筒是否正确安装。如果集尘筒已满，请清空。',
+</div>
+<div>
+    fatalFault_shortDescription: '我们检测到故障。',
+    fatalFault_LongDescription: '我们随时为您提供帮助，请您联系我们。',
+    oscillationSensor_Description: '我们检测到摇摆送风马达的一个故障，请您联系我们。',
+    airQualitySensor_Description: '我们检测到您的一个空气质量传感器出现问题，请您联系我们。', // TODO: TBC
+    on: '开启',
+    off: '关闭',
+    auto: '自动',
+    cancel: '取消',
+    cool: '凉风',
+    hours: '小时',
+    minutes: '分钟',
+    temperature: '温度',
+    humidity: '湿度',
+    pm25: 'PM2.5',
+    refresh: '刷新',
+    powerTimer: '定时器',
+    fanSpeed: '风扇速度',
+    oscillation: '摇摆送风',
+    heating: '目标温度',
+    currentTemperature: '当前温度',
+    heatWillPaused: '制暖模式将暂停',
+    heatRemainPaused: '制暖模式将保持暂停',
+    fanPaused: '风扇已暂停',
+    offSensor: '关闭',
+    initSensor: '正在启动传感器...',
+    tipConnecting: ['请确认您的设备已打开并已连接至网络。', ''],
+    tipDisconnected: ['请确认您的设备已打开并已连接至网络。', ''],
+    tipPowerOff: '您可以轻点或长按以下按钮。',
+    tipAqiIdle: '已达到您的空气质量目标。 您的设备已暂停。',
+    tipHmaxIdle: '已达到您的目标温度。 制暖模式已暂停。',
+    tipSensorInit: '检测空气质量可能需要最长5分钟的时间。',
+    monitor: {
+    title: '开启持续监测？',
+    desc: '您随时可以在机器设置中禁用此项。',
+    cancel: '取消',
+    activate: '开启',
+    continuousMonitoring: '持续监测来查看室内空气质量。',
+    },
+    oscillationPause: {
+    title: 'Your machine is now paused',
+    desc: 'Your machine will start to oscillate when it begins to heat/purify again.',
+    confirm: '好的',
+    },
+    machineECFaults,
+    support: '支持',
+    charging: '正在充电',
+    readyToClean: '准备清洁',
+    returnToStart: '正在返回初始位置',
+    powerMode: '功率模式',
+    quietMode: '安静',
+    highMode: '标准',
+    maxMode: '强效',
+    inactiveCharging: robotCleanState.readyToClean,
+    inactiveCharged: robotCleanState.readyToClean,
+    fullCleanInitiated: '正在准备',
+    fullCleanRunning: '正在清洁',
+    fullCleanPaused: '已暂停',
+    fullCleanFinished: robotCleanState.returnToStart,
+    fullCleanAborted: robotCleanState.returnToStart,
+    fullCleanNeedsCharge: 'Unknown: NeedsCharge',  // unknown
+    fullCleanCharging: robotCleanState.charging,
+    updatingSW: {
+    short: '更新软件…',
+    },
+    switchedOff: {
+    short: '吸尘机器人已关机',
+    long: '请确认您的机器人已通电并处于已连接状态。',
+    },
+    connecting: {
+    short: '正在连接...',
+    },
+    connectionLost: {
+    short: '连接中断',
+    long: '请确认您的机器人已通电并处于已连接状态。',
+    },
+    connectionState: {
+    connecting: '正在连接...',
+    connected: 'Connected',
+    disconnected: '连接中断',
+    subfailed: '连接中断',
+    },
+    refresh: '刷新',
+    decoration: '过去24小时',
+    lastUpdate: '最近更新时间',
+    dominant: '主要污染物',
+    activate: '开启',
+    activateText: '要收集空气质量信息，请开启持续监测。',
+    offText: '您当前的空气质量信息尚无记录。请稍后再来查看。',
+    noData: '暂无记录',
+    },
+    robot: {
+    lastCleanDec: 'Last clean',
+    cleanMap: 'Clean Map',
+    lastClean: 'Last Clean',
+    cleanArea: '已清洁区域',
+    cleanTime: '清洁时间',
+    charge: '充电次数',
+    daysInWeek: ['星期日','星期一', '星期二','星期三','星期四','星期五', '星期六'],
+    squareMeter: '平方米',
+    time: {
+    sec: '秒',
+    min: '分钟',
+    hour: '小时',
+    day: '天',
+    week: '周'
+    },
+    noDataLine1: '吸尘机器人完成一次清洁后,',
+    noDataLine2: '活动记录将显示在这里。'
+    // Common
+    ok: '确定',
+    login: '登录',
+    register: '注册',
+    email: '邮箱地址',
+    password: '密码',
+    continues: '继续',
+    next: '下一步',
+    finish: '完成',
+    privacyPolicy: '隐私政策',
+    error: '错误',
+    chineseError: '请不要包含中文字符',
+    networkError: '网络错误',
+    networkErrorDes: '发生错误，请重试。',
+
+    // Welcome page.
+    newUser: '新用户',
+    welcome: '欢迎',
+    appIntroduction: '要控制您的戴森已连接设备，请登录或注册新用户。',
+
+    // Login page.
+    personalDetail: '登录',
+    emailDescription: '请输入您的电子邮件地址和密码。',
+    forgetPassword: '忘记密码？',
+    newToDyson: '戴森新用户？',
+    errorTxt: '请检查您的个人资料是否正确。',
+
+    // Register email page.
+    createAccountDes: '请使用您的电子邮件地址创建账号。',
+
+    // Register password page.
+    familyName: '姓氏',
+    firstName: '名字',
+    tectNotificationDes: "如果您想了解最新戴森科技、获得活动邀请与特别优惠，请选择此项。您随时可以取消订阅。",
+    passwordDes: '密码应至少为6个字符，包括1个数字。',
+
+    // Register success page.
+    loginActivated: '您的帐号已创建成功',
+    connectDes: "现在，我们来连接您的戴森设备。",
+    addMachine: '添加设备',
+    addMachineLater: '稍后添加设备',
+
+    // Reset password page.
+    resetTitle: '重置密码很简单',
+    resetDes: "我们将向您发送重置密码操作步骤。首先，请确认您的邮箱地址。",
+
+    // Reset password success page.
+    resetEmailed: "我们已向您发送了电子邮件",
+    resetStepsDes: '请按照邮件中列出的步骤重置密码。',
+
+    // Terms of use.
+    userTerm: '使用条款',
+    readTermDes: '请阅读我们的使用条款。您对戴森小程序的使用受该条款约束。',
+    readPolicyDes: '如需进一步了解我们如何处理您的个人信息，请阅读我们的隐私政策。',
+    agreeTermDes: '我同意使用条款',
+    termsOfUseContent,
+    // New Content.
+    yourPrivacy: '您的隐私',
+    privacyDes1: '通过戴森微信小程序，您可以连接至您的戴森已连接设备，并用手机和微信账号控制该设备。',
+    privacyDes2: '为进行上述操作，微信小程序将会：',
+    privacyTerm1: '•	使用您的个人信息（包括您的姓名、电子邮件地址、微信基本用户资料和戴森设备序列号）来为您创建账号，连接至您的戴森设备，允许您操作和控制该设备，并为您提供关于设备性能表现的重要信息。',
+    privacyTerm2: '•	在自动更新开启的情况下，使用戴森设备序列号自动连接至该设备，以便戴森更新软件来支持新功能和修复错误。',
+    privacyTerm3: '•	收集有关您如何使用微信小程序的基本信息，但不包括您的任何个人信息。戴森只会将所收集的信息用于分析和改进微信小程序之目的。',
+    privacyDes3: "以上内容将依照戴森的全球隐私政策执行。",
+    iAgree: '我同意',
+
+
+    // Have active login page.
+    emailRegistered: '您的登录信息已激活',
+    emailRegisteredDes: "您似乎已经使用此电子邮件地址注册过了。",
+    emailRegisteredPrompt: '登录即可连接至您的戴森设备。',
+
+    // No machine
+    readyToConnect: '随时随地掌控您的戴森已连接设备。',
+
+    // Trouble connecting
+    troubleConnectingDes: "我们在连接时遇到问题",
+    refresh: '刷新',
+
+    // Shake and configuration
+    helpAndSupport: '帮助与支持',
+    userFeedback: '用户反馈和建议',
+    eula_introduction_title: "引言",
+    eula_introduction_body: "使用Dyson Link小程序之前，请仔细阅读本使用条款。所有条款内容都十分重要，但请特别留意黑体与斜体内容，这些内容限定了我们的责任，或可能给您带来风险。 \n\n我们开发了Dyson Link小程序，以便您无论在家与否，都能通过移动设备控制并监测已连接的戴森产品。 本使用条款将告知您使用应用程序的相关条款。 使用应用程序并接受本使用条款，即表示您同意遵守本使用条款的内容。我们建议您保留本使用条款的副本文件，以备将来参考。 如果不同意本使用条款，您将不得使用应用程序。请注意，如果不使用应用程序，会影响您使用已连接的戴森产品，且您可能无法使用戴森产品的全部功能。",
+
+    eula_infoAboutUs_title: "关于我们",
+    eula_infoAboutUs_body: "在本使用条款中，所有“我们戴森”“我们”或“我们的”均代表戴森技术有限公司（公司编号：01959090），注册地址及主要交易地址为Tetbury Hill, Malmesbury, Wiltshire, SN16 0RP, United Kingdom。我们的增值税税号为GB 736 734 610。我们是一家有限公司。",
+
+    eula_privacyPolicy_title: "隐私政策",
+    eula_privacyPolicy_body: "我们的隐私政策Privacy.Dyson.Com解释了我们收集哪些个人信息、为何收集、如何使用、您对个人信息的控制权限以及我们为保护您的隐私而采取的程序。隐私政策适用于我们通过应用程序和已连接的戴森产品所收集的个人信息。 使用应用程序之前，请务必仔细阅读我们的隐私政策。",
+
+    eula_cookiesPolicy_title: "Cookie政策",
+    eula_cookiesPolicy_body: "应用程序使用cookie和其他类似的跟踪与分析技术。“Cookie”是网站或移动应用程序在您的设备上保存的小型文本文件。自1990年代中期以来，这一技术一直普遍存在，是互联网上使用最广泛的技术之一。 如需了解详情，包括我们所使用的cookie及其他类似的跟踪与分析技术的种类，以及如何对其进行管理，请访问http://privacy.dyson.com/en/globalcookiepolicy.aspx查看我们的cookie政策。",
+
+    eula_locationServices_title: "定位服务与功能",
+    eula_locationServices_body: "首次将应用程序连接至您已连接的戴森产品时，您需要开启设备上的“定位服务”。在“定位服务”开启期间，应用程序还会收集并使用您的地理位置数据，以便为您提供更多相关的个性化信息。您可以在设备的“设置”中关闭“定位服务”功能，但关闭之后，您将无法使用应用程序和/或已连接的戴森产品的部分功能。如需了解我们如何收集并使用您的地理位置数据，请查看我们的隐私政策。",
+
+    eula_useOfTheApp_title: "您对应用程序的使用",
+    eula_useOfTheApp_body: "您可以免费使用应用程序。您可以随时停止使用应用程序，如果不使用应用程序，会影响您使用已连接的戴森产品，且您可能无法使用戴森产品的全部功能。\n\n您有责任为获得应用程序访问权限做好必要的准备。为确保应用程序正常运行，您的设备需要符合相关应用商店里列明的技术要求。 \n\n请注意，如果您在某一国家/地区通过某一戴森账号使用应用程序，当您随后前往或搬迁至另一个国家/地区时，需要重新注册新的戴森账号，才可以在该国/地区继续使用应用程序。重新注册不会影响您使用应用程序或已连接的戴森产品，但您将无法访问旧账号中的历史数据（例如与您使用已连接的戴森产品有关的数据）。\n\n您仅可以出于合法目的而使用应用程序。此外，您不可以：\n\n•\t以侵犯他人权利的方式使用应用程序，或限制或禁止任何人使用或享受应用程序；\n•\t在使用应用程序时造成应用程序中断、损毁、损害或效率降低；\n•\t对构成本应用程序的任何软件（包括源代码）、数据库和其他技术进行复制、修改、反向设计、反编译、反汇编、变更或以其他方式进行篡改（或授权、鼓励或协助其他人这样做）；\n•\t故意传输任何包含病毒、木马、蠕虫、定时炸弹病毒、击键记录器、间谍软件、广告软件或任何其他有害程序或类似用于对计算机软件或硬件的操作产生不利影响的计算机代码的数据；以及/或\n•\t渗透或尝试渗透应用程序的安全防护。",
+
+    eula_accessToTheApp_title: "您对应用程序的访问权限",
+    eula_accessToTheApp_body: "我们不保证应用程序或其中的内容会始终可用或不间断（在本使用条款所描述的某些特定情况下，我们可能会将其暂停、撤销或更替）。 \n\n如果我们有合理的理由确信您已经违反或可能违反此使用条款中的任何条款，我们可以暂停、撤销或停止您对应用程序的访问权限（包括禁用账号详细信息或密码等安全措施）。在可能的情况下，我们会将上述意向通知您，并给予您申诉的机会。请注意，如果我们确实暂停、撤销或停止您对应用程序的访问权限，您对已连接的戴森产品的使用将受到影响，您可能会无法使用戴森产品的全部功能。",
+
+    eula_integrationWithThirdParty_title: "已连接的戴森产品与第三方产品的整合",
+    eula_integrationWithThirdParty_body: "我们为一部分已连接的戴森产品添加了可以与家中某些第三方产品（如Amazon Echo，又称Alexa）交互的功能。虽然我们将尽最大努力确保这种交互操作的成功，但我们不对任何第三方产品的任何故障负责，也不对交互操作对应用程序造成的任何影响负责。此外，出于交互之目的，我们可能会与第三方共享部分数据，如需了解详情，请查看我们的隐私政策。",
+
+    eula_faultsServiceMaintenance_title: "故障、服务及维护通知",
+    eula_faultsServiceMaintenance_body: "我们可能会通过应用程序向您发送关于已连接的戴森产品的故障、服务及/或维护通知（例如零部件需要更换）。这些通知在应用程序中的默认设置是打开，我们建议您不要更改，否则您可能不会收到关于已连接的戴森产品的重要信息。如果您确实想禁用通知，可以通过应用程序的“设置”来禁用，但我们不会对您进行此操作造成的任何后果（如已连接的戴森产品无法再正常运行）承担责任。",
+
+    eula_updatesAndUpgrades_title: "更新与升级",
+    eula_updatesAndUpgrades_body: "在某些时候，我们需要向应用程序和/或您已连接的戴森产品的软件部署或提供补丁、更新、升级、附加内容或其他改动（例如维护、优化、功能添加或删除、修复软件错误或解决安全问题）。\n\n这些更新与升级可能会导致应用程序和/或您已连接的戴森产品暂时不可用。在某些情况下，我们需要暂停、撤销或禁用应用程序和/或软件较长时间，以便部署这些更新与升级。我们会尽最大努力将这些情况通知您，但在个别情况下（例如因不可抗力或出现紧急安全问题）可能无法通知到位。应用程序中默认自动部署这些更新与升级。您可以通过应用程序的“设置”关闭此设置，但我们建议您始终安装最新版本的应用程序和软件。如果您没有安装任何更新或升级，则您可能无法使用应用程序和/或您已连接的戴森产品的全部功能。在某些情况下，我们也有理由认为必须强制进行升级或更新，例如在已连接的戴森产品首次连接时，以确保安装最新版本的应用程序和/或软件，再比如出于必要的安全或操作原因。在这种情况下，无论您的应用程序更新设置如何，我们都会自动像应用程序和/或软件推送升级或更新。\n\n我们将采取合理措施，尽量减少更新与升级对您使用应用程序和/或您已连接的戴森产品的影响，并尽可能提前就可能会影响使用的任何更新和升级向您发送通知。如果应用程序和/或软件不可用，将影响您使用已连接的产品，且您可能无法使用产品的全部功能。",
+
+    eula_yourAccountAndPassword_title: "您的账号和密码",
+    eula_yourAccountAndPassword_body: "您可以通过应用程序注册戴森账号，或使用您现有的戴森账号登录。您不可以代他人注册。注册账号即表示您确认您提供给我们的所有信息和细节都是真实、准确且最新的。您必须为您的戴森账号密码及账号信息保密，不得将账号密码或账号信息透露给他人。我们不对任何您的账号盗用负责，除非账号盗用是因我们的过失而造成。\n\n如果您了解到或怀疑除您以外的其他人知晓您的账号信息或密码，您必须及时更改密码并通过askdyson@dyson.co.uk告知我们。",
+
+    eula_intellectualProperty_title: "知识产权",
+    eula_intellectualProperty_body: "我们是应用程序及其上发布的全部数据、材料及内容的全部知识产权的所有者或许可持有人。 用于开发和提供此应用程序的部分第三方软件和许可的详细信息，请查看我们的在线应用程序许可页面http://privacy.dyson.com/en/globalprivacypolicy.aspx。 \n\n您对应用程序的使用不会授予您有关我们或我们的许可人的知识产权的权利（本使用条款中所列出的除外）。\n\n作为对您接受本使用条款的回报，我们授予您非独占的持续许可，可在您拥有或控制的任何设备上下载、展示和使用应用程序。 本许可仅供您个人使用（即：不得用于商业用途或利益获得），且不可转让（即：不得将其授予其他人）。如果您的设备上不再安装应用程序，如果我们合理告知您许可即将结束，那么此许可将自动结束，恕不另行通知。",
+
+    eula_ourLiability_title: "我们的责任",
+    eula_ourLiability_body: "本使用条款中的内容均不排除或限制我们在下列情况中的责任：（1）因我们的疏忽，或我们的员工、代理商、承包商的疏忽，或欺诈或欺诈性的失实陈述而导致的死亡或人身伤害；（2）我们的重大过失，故意或蓄意的不当行为或企图（在本使用条款在您所在国家/地区具有公认的法律意义的情况下）；或（3）我们在您所在国家/地区无法排除或限制的任何其他责任。本使用条款中的内容不会影响您作为消费者在您所在国家/地区的合法权利（您所在国家/地区赋予您的权利可能会比本使用条款所列出的权利更广泛）。\n出现下列情况时，我们对您遭受的任何损失或损害将不承担任何责任：（1）在您接受本使用条款时，您和我们无法合理预见损失或损害——如果损失或损害在您接受本使用条款时明显有可能发生，或您和我们都知晓有可能发生（例如您和我们讨论过相关事宜），那么这样的损失或损害是可以合理预见的；或（2）损失或损害不是由于我们违反本使用条款或我们的其他故障而造成的。\n我们不会声明或承诺在应用程序上提供的数据、材料或内容是准确、完整或最新的。对于第三方在应用程序上提供的任何数据、材料或内容（例如天气数据），我们也不承担任何责任。对于您对上述信息的依赖，我们不承担任何责任，但我们始终会尽己所能谨慎行事，在应用程序中提供数据、材料或内容，或允许第三方提供相关信息。\n尽管我们采取了合理的预防措施来防止在应用程序中存在计算机病毒和/或其他恶意程序，但我们无法保证应用程序中不会有任何病毒和/或恶意程序存在。\n当您无法根据本使用条款而使用应用程序和/或已连接的戴森产品期间，我们也不对您承担任何责任。",
+
+    eula_children_title: "儿童",
+    eula_children_body: "应用程序并非为儿童而设计。如果您是儿童，请勿使用应用程序，也不要为了使用应用程序而尝试注册。",
+
+    eula_changesToTerms_title: "本使用条款的更改",
+    eula_changesToTerms_body: "我们可能会随时修改本使用条款，以反映以下方面的变化：\n\n• 相关法律或监管要求；\n• 安全、技术或操作问题；\n• 已连接的戴森产品；以及/或\n• 应用程序的功能。\n\n如果我们更改了本使用条款，会在下方发布更改详情摘要。如果我们拥有您的电子邮件地址，可能也会通过电子邮件向您发送关于更改的信息。\n\n接受修订后的使用条款，即表示您同意相应修订内容。如果您不同意修订内容，应停止使用应用程序。\n\n本使用条款最后审核并更新于2018年4月。",
+
+    eula_previousChangesToTerms_title: "本使用条款的更改历史",
+    eula_previousChangesToTerms_body: "2018年4月：使用条款发布",
+
+    eula_general_title: "一般条款",
+    eula_general_body: "如果本使用条款的任何条款或部分条款被任何法院或监管机构拒绝或认定为无效，则其他条款应继续适用。\n\n如果您或我们违反了本使用条款，且您或我们对另一方不采取任何行动，您或我们仍然有权在您或我们违反本使用条款的任何其他情况下使用我们的权利和补救措施。",
+
+    eula_disputes_title: "争议",
+    eula_disputes_body: "我们将尽最大努力解决有关本使用条款和您使用应用程序的任何争议。\n  \n本使用条款、其主题及内容构成，受中华人民共和国（为本条款目的，不包括港澳台地区法律）法律管辖。本使用条款中的任何内容都不会影响您作为消费者依赖相关当地法律强制性规定和合法权利的权利。\n\n您和我们都同意中华人民共和国的法院将有非排他性的管辖权。",
+
+    eula_contactUs_title: "联系我们",
+    eula_contactUs_body: "如果您对本使用条款或应用程序有任何问题、想法、疑虑、意见或要求，可以随时致电我们，电话：[0800 298 0298]，或给我们发送电子邮件：askdyson@dyson.co.uk。我们会尽快回复您。",
+
+    eula_appleTerms_title: "苹果公司（Apple）特别条款",
+    eula_appleTerms_body: "只有当您从苹果应用商店（Apple App Store）下载了应用程序，以下苹果公司（Apple）特别条款才适用，并作为对本使用条款中其他条款的补充（如果本使用条款中的其他条款与以下苹果公司特别条款发生冲突或不一致，将适用苹果公司特别条款）。\n\n•\t本使用条款仅为您与我们之间达成的协议，与苹果公司（Apple）无关。我们只对应用程序及其内容负责。\n•\t我们在上述“知识产权”一节授予您的许可仅限于苹果（Apple）品牌的产品，且始终不可转让（除非您通过“家庭共享”或大量购买的方式以您的其他账号访问和使用应用程序）。\n•\t苹果公司（Apple）没有义务为应用程序提供任何维护和支持服务。\n•\t苹果公司（Apple）对于应用程序没有任何担保义务，任何因不遵守任何担保（如有）而导致的索赔、损失、责任、损害、成本或费用将由我们自行负责。\n•\t我们——而不是苹果公司（Apple）——有责任解决您或任何第三方关于应用程序或您对应用程序的拥有和/或使用的任何索赔，包括但不限于：（1）产品责任索赔；（2）因应用程序未符合适用法律或监管要求的任何索赔；（3）基于消费者隐私保护或类似法律的索赔，包括与应用程序使用HealthKit和HomeKit框架（如有）有关的索赔。\n•\t如有任何第三方声称应用程序或您对应用程序的拥有和使用侵犯了该第三方的知识产权，我们——而不是苹果公司（Apple）——将全权负责调查、辩护、解决和执行任何此类知识产权侵权索赔。\n•\t您承诺：（1）您并非位于受美国政府禁运或被美国政府列为“支持恐怖主义”国家的国家；（2）您未被列入美国政府禁止或限制的当事人名单。\n•\t使用应用程序时，您必须遵守适用的第三方协议条款。\n•\t苹果公司（Apple）和苹果公司（Apple）的子公司是本使用条款的第三方受益者（即：虽然他们未参与使用条款，但他们可以依赖于有利于他们的相关使用条款）。在您接受本使用条款后，苹果公司将有权（也将被视为已经接受了这项权利）作为第三方受益人针对您执行本使用条款。  \n\nGoogle Play特别条款\n\n只有当您从Google Play商店下载了应用程序，以下Google Play特别条款才适用，并作为对本使用条款中其他条款的补充（如果本使用条款中的其他条款与以下Google Play特别条款发生冲突或不一致，将适用Google Play特别条款）。\n\n在适用的情况下，我们在上述“知识产权”一节授予您的许可包含家庭群组中的用户，家庭群组通过将一家之主的账号与家庭成员的账号绑定而建立。"
+    title: '您的戴森 Lightcycle™ 不支持',
+    line1: '很遗憾这台机器与戴森 Link 小程序不兼容。',
+    line2: '请使用戴森 Link 应用程序控制您这台机器。',
+    ok: '确认'，
+    control: '控制',
+    data: '数据',
+    activity: '活动',
+    scheduling: '设置',
+    setting: '设置',
+    addMachine: '添加设备',
+    selectMachine: '选择设备',
+    notSupportMachine: '小程序暂时不兼容此设备'，
+    continueMonitor: '持续监测',
+    remove: '删除设备',
+    delete: '删除设备',
+    help: '支持',
+    store: '商店',
+    ecName: '房间名称',
+    aboutLinkApp: '关于 Dyson Link 应用',
+    robotName: '编辑吸尘机器人名称',
+    logout: '退出',
+    autoUpdate: '软件自动更新',
+    additionalSetting: '更多信息',
+    modalLogout: '您要退出戴森账号吗？',
+    cancel: '取消',
+    productSetting: '机器设置'，
+    dysonLink: 'Dyson Link 应用程序',
+    ec: {
+    'desc1': '除了使用微信小程序，您也可以使用 Dyson Link 应用程序（可在iOS和 Android 平台的应用商店下载）。',
+    'desc2': '在微信小程序上您可以体验到绝大多数的功能。其他功能您可以在 app 上体验到。',
+    'desc3': '这些功能包括：一周7天的日程设置（您的机器只有在设定的时间工作），摆动送风的更多控制选项，以及四周以内的空气质量记录。',
+    },
+    'n223': {
+    'desc1': '除了使用微信小程序，您也可以使用 Dyson Link 应用程序（可在iOS和 Android 平台的应用商店下载）。',
+    'desc2': '在微信小程序上您可以体验到绝大多数的功能。其他功能您可以在 app 上体验到。',
+    'desc3': '这些功能包括：一周7天的日程设置（您的吸尘机器人只有在您设定的时间进行清洁），以及查看更多清洁记录的功能。',
+    },
+    'n276': {
+    'desc1': '除了使用微信小程序，您也可以使用 Dyson Link 应用程序（可在iOS和 Android 平台的应用商店下载）。',
+    'desc2': '在微信小程序上您可以体验到绝大多数的功能。其他功能您可以在 app 上体验到。',
+    'desc3': '这些功能包括：一周7天的日程设置（您的吸尘机器人只有在您设定的时间进行清洁），查看更多清洁记录的功能，以及创建地图和分区域定义清洁模式的功能。',
+    },
+    robotName: '吸尘机器人名称',
+    roomName: '房间名称',
+    done: '完成',
+    nameList: [
+    '卧室',
+    '温室',
+    '餐厅',
+    '楼下',
+    '车库',
+    '走廊',
+    '厨房',
+    '客厅',
+    '休息室',
+    '主卧',
+    '办公室',
+    '阁楼',
+    '起居室',
+    '书房',
+    '楼上',
+    '杂物间'
+    ],
+    edit: '编辑'，
+    remain: '剩余',
+    resetTitle: '重置滤网寿命',
+    resetContent: '在重置机器滤网寿命之前，请先更换滤网。',
+    resetButton: '重置滤网寿命',
+    resetWarning: '您的滤网需要更换。',
+    modelResetTitle: '重置滤网寿命?',
+    modelResetContent: "在重置机器滤网寿命之前，请先更换滤网。",
+    cancel: '取消',
+    continue: '继续',
+    modelResetFailTitle: '无法重置滤网寿命',
+    modelResetFailContent: '您与戴森网络的连接已中断。',
+    ok: 'OK'，
+    additionalInformation: '更多信息',
+    done: editMachine.done,
+    serialNumber: '序列号',
+    currentVersion: '当前软件版本',
+    filterLife: '滤网寿命',
+    timezone: '时区',
+    cflr: '活性炭滤网寿命',
+    hflr: 'HEPA滤网寿命',
+    hintTitle: '正在删除您的机器人',
+    line1: '我们在重置机器人时遇到了连接问题。请检查您的机器人，确认重置是否成功。如果机器人的无线网络指示灯常亮，说明其仍可能处于连接状态。',
+    line2: '要确保机器已重置、信息已删除，请按以下步骤操作。',
+    line3: "1. 从戴森官网下载WIPE软件并保存到U盘中，不要重新为文件命名。U盘剩余空间至少应为256MB，不得存储有其他文件或文件夹。U盘不得加密，必须为FAT32或MS-DOS(FAT)格式。",
+    line4: '2. 在某些网页浏览器中，该文件可能仅会显示，不会提示您下载。在这种情况下，请选择"文件"，然后选择"另存为"（或您的网络浏览器中的相应选项），即可将文件保存到U盘中。',
+    line5: "3. 取下机器人的后置滤网，然后将U盘插入机器后部的USB接口。",
+    line6: "4. 将机器人放置在充电底座上面，保证它在充电。接下来，长按电源键。机器人的指示灯会有如下的表现：蓝色光圈亮起，蓝色光圈消失，蓝色光随机亮起。当你看到蓝光随机亮起之后请松开电源键。",
+    line7: "5. 流程完成后，机器人将自动关机。取下U盘，重新安装滤网和滤网罩。",
+    line8: "4. 将机器人放到充电底座上充电。接下来，按下并按住电源按钮，直至粉色光圈闪烁，表示流程已经开始。"
+    removeMachineTitle: '删除设备',
+    ownerLine1: '机器人将从您的小程序中删除，无线网络设置将重置。其他用户如需使用机器人，需要重新连接。',
+    ownerLine2: '活动记录、地图等信息也将从机器人和戴森网络中删除。',
+    userLine1: '机器人将从您的小程序中移除。其他用户仍可以使用该机器人，日程安排和无线网络设置也将保留。',
+    userLine2: '要删除机器人的日程安排和无线网络设置，以及活动记录和地图，请勾选以下复选框。',
+    removeAndReset: '删除并重置机器人',
+    ownerEc: '此设备将从您和所有其他已连接用户的小程序中永久删除。',
+    userEc: '此设备将从您的小程序中移除。其他用户仍可以使用该设备，其设置也将保留。',
+    resetEc: '要清空设备的设置和数据，请先轻点下面的"删除"按钮，然后同时按住设备和遥控器上的电源按钮10秒钟。',
+    removeButton: '删除',
+    modalRemoveTitle: '删除设备',
+    modalRemoveContent: '确定从小程序删除这台设备?',
+    cancel: filterLife.cancel,
+    removeFailed: '删除失败',
+    modalOfflineTitle: '机器人已离线',
+    modalOfflineContent: '无法删除或重置机器人。请开启吸尘机器人并重试',
+    try: '重试',
+    removing: '正在删除...',
+    finished: '完成',
+    moreInfo: '更多信息',
+    close: '返回',
+    offLineModalTitle: '删除机器人',
+    offLineModalContent: "重置机器人时出错了。您可以继续删除机器人，或再次尝试重置机器人。",
+    continue: '继续',
+    retry: '重试',
+    removeHint,
+    resetGen1ECLine1: "要清空设备的无线网络设置，请先轻点下面的删除，然后按住设备的电源按钮20秒。",
+    resetGen1ECLine2: '重置后，无线网络指示灯将闪烁白色与绿色。',
+    resetGen1ECLine3: '注意：要使用设备，您需要将它重新连接至其他移动设备。要重新连接，请先点击主菜单中的"添加"图标。'
+    timezone: '时区',
+    select: '提交'，
+    continueDesc: '持续监测可以让您的设备收集环境信息。选定后，此功能将始终处于启动状态。',
+    softWareUpToDate: '软件是最新的。',
+    softWareScheduled: '更新已安排'，
+    title: '您的戴森 Lightcycle™ 不支持',
+    line1: '很遗憾这台机器与戴森 Link 小程序不兼容。',
+    line2: '请使用戴森 Link 应用程序控制您这台机器。',
+    ok: '确认'
+</div>
+
+</body>
+</html>
